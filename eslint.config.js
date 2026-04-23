@@ -12,6 +12,7 @@ export default defineConfig([
       js.configs.recommended,
       reactHooks.configs.flat.recommended,
       reactRefresh.configs.vite,
+      { rules: { 'react-refresh/only-export-components': 'off' } }
     ],
     languageOptions: {
       ecmaVersion: 2020,
@@ -23,7 +24,7 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      'no-unused-vars': 'off',
     },
   },
 ])

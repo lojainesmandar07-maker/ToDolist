@@ -48,6 +48,10 @@ export const TaskProvider = ({ children }) => {
   });
 
   const [activeView, setActiveView] = useState('kanban'); // 'kanban' or 'logs'
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   useEffect(() => {
     localStorage.setItem('maplewood_tasks', JSON.stringify(tasks));
@@ -79,6 +83,9 @@ export const TaskProvider = ({ children }) => {
       tasks,
       activeView,
       setActiveView,
+      isModalOpen,
+      openModal,
+      closeModal,
       addTask,
       updateTask,
       deleteTask,
