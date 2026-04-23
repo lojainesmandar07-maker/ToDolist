@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "todolist1",
   "compatibility_date": "2024-04-23",
   "assets": {
     "directory": "./dist"
