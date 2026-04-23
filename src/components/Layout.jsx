@@ -1,31 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TopBar from './TopBar';
+import { useTasks } from '../context/TaskContext';
 import SideNav from './SideNav';
 
 const Layout = ({ children }) => {
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
-
+  const { openModal } = useTasks();
   return (
     <div className="bg-mw-bg text-[#e9e2d5] min-h-screen flex flex-col font-nunito overflow-x-hidden noise-bg relative">
       <TopBar />
       <div className="flex flex-1 overflow-hidden">
-        <SideNav onOpenAddModal={() => setIsAddModalOpen(true)} />
+        <SideNav />
         <main className="flex-1 p-4 md:p-8 overflow-y-auto relative h-[calc(100vh-72px)] custom-scrollbar">
-          {/* Passing modal state down using React.cloneElement for simplicity without adding extra context just for modal */}
-          {React.Children.map(children, child =>
-            React.isValidElement(child)
-              ? React.cloneElement(child, { isAddModalOpen, setIsAddModalOpen })
-              : child
-          )}
+          {children}
         </main>
       </div>
 
+
       <footer className="bg-mw-sidebar font-nunito italic text-xs border-t-2 border-[#3d1f08] w-full py-2 px-8 flex justify-between items-center z-50">
-        <div className="text-[#f0c87a]">© 1224 Maplewood Kingdom</div>
-        <div className="flex gap-4">
-          <a className="text-[#d4846a] hover:text-[#fef3c7] transition-colors" href="#">Owl Post</a>
-        </div>
+        <div className="text-[#f0c87a]">© 2025 Maplewood Tasks</div>
       </footer>
+
+      <button
+        onClick={openModal}
+        className="md:hidden fixed bottom-10 left-1/2 -translate-x-1/2 bg-mw-wood text-mw-gold font-bubblegum text-lg px-6 py-3 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.5)] border-2 border-[#f0c87a] z-50"
+      >
+        Add Task
+      </button>
     </div>
   );
 };

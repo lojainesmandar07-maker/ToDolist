@@ -5,13 +5,13 @@ import ForestBoards from './components/ForestBoards';
 import SeasonalLogs from './components/SeasonalLogs';
 import AddTaskModal from './components/AddTaskModal';
 
-const AppContent = ({ isAddModalOpen, setIsAddModalOpen }) => {
+const AppContent = () => {
   const { activeView } = useTasks();
 
   return (
     <>
       {activeView === 'kanban' ? <ForestBoards /> : <SeasonalLogs />}
-      <AddTaskModal isOpen={isAddModalOpen} onClose={() => setIsAddModalOpen(false)} />
+      <AddTaskModal />
     </>
   );
 };

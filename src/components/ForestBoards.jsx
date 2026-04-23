@@ -73,7 +73,7 @@ const ForestBoards = () => {
             Forest Boards
             <span className="text-4xl">🌲</span>
           </h1>
-          <p className="font-nunito text-lg text-[#d5c3b8] max-w-2xl">Organize your daily adventures through the enchanted woods.</p>
+          <p className="font-nunito text-lg text-[#d5c3b8] max-w-2xl">Keep track of what you're working on.</p>
         </div>
       </header>
 
