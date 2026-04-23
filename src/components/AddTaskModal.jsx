@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTasks } from '../context/TaskContext';
 
-const AddTaskModal = ({ isOpen, onClose }) => {
-  const { addTask } = useTasks();
+const AddTaskModal = () => {
+  const { addTask, isModalOpen, closeModal } = useTasks();
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -13,20 +13,20 @@ const AddTaskModal = ({ isOpen, onClose }) => {
 
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') closeModal();
     };
-    if (isOpen) window.addEventListener('keydown', handleEscape);
+    if (isModalOpen) window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
-  }, [isOpen, onClose]);
+  }, [isModalOpen, closeModal]);
 
-  if (!isOpen) return null;
+  if (!isModalOpen) return null;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.title.trim()) return;
     addTask(formData);
     setFormData({ title: '', description: '', priority: 'normal', status: 'todo', season: 'spring' });
-    onClose();
+    closeModal();
   };
 
   return (
@@ -105,7 +105,7 @@ const AddTaskModal = ({ isOpen, onClose }) => {
           <div className="flex gap-3 justify-end pt-4 mt-4 border-t-2 border-mw-wood/20">
             <button
               type="button"
-              onClick={onClose}
+              onClick={closeModal}
               className="px-4 py-2 rounded-full font-bold text-[#8b5a2b] hover:bg-[#8b5a2b]/10 transition-colors"
             >
               Cancel

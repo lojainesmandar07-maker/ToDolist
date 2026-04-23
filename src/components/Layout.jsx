@@ -1,22 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TopBar from './TopBar';
 import SideNav from './SideNav';
 
 const Layout = ({ children }) => {
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
-
   return (
     <div className="bg-mw-bg text-[#e9e2d5] min-h-screen flex flex-col font-nunito overflow-x-hidden noise-bg relative">
       <TopBar />
       <div className="flex flex-1 overflow-hidden">
-        <SideNav onOpenAddModal={() => setIsAddModalOpen(true)} />
+        <SideNav />
         <main className="flex-1 p-4 md:p-8 overflow-y-auto relative h-[calc(100vh-72px)] custom-scrollbar">
-          {/* Passing modal state down using React.cloneElement for simplicity without adding extra context just for modal */}
-          {React.Children.map(children, child =>
-            React.isValidElement(child)
-              ? React.cloneElement(child, { isAddModalOpen, setIsAddModalOpen })
-              : child
-          )}
+          {children}
         </main>
       </div>
 
