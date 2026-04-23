@@ -3,6 +3,7 @@ import { useTasks } from '../context/TaskContext';
 import TaskCard from './TaskCard';
 import { Sparkles, Sprout, CheckCircle2 } from 'lucide-react';
 
+// eslint-disable-next-line no-unused-vars
 const Column = ({ title, status, icon: Icon, colorClass, headerColor }) => {
   const { tasks, moveTask } = useTasks();
   const [isOver, setIsOver] = useState(false);
