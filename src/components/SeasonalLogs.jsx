@@ -54,15 +54,15 @@ const SeasonalLogs = () => {
           <h1 className="font-bubblegum text-h1 text-[#f0c87a] mb-1 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
             Seasonal Logs
           </h1>
-          <p className="font-nunito text-lg text-[#d5c3b8] max-w-2xl">Chronicle your long-term goals and natural cycles across the year.</p>
+          <p className="font-nunito text-lg text-[#d5c3b8] max-w-2xl">Sort your tasks by season.</p>
         </div>
       </header>
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 pb-8 overflow-y-auto custom-scrollbar flex-1 pr-4">
-        <Quadrant title="Spring Seeds" season="spring" icon={Leaf} colorClass="text-mw-sage" />
-        <Quadrant title="Summer Bloom" season="summer" icon={Sun} colorClass="text-mw-gold" />
-        <Quadrant title="Autumn Harvest" season="autumn" icon={Wind} colorClass="text-mw-rose" />
-        <Quadrant title="Winter Rest" season="winter" icon={Snowflake} colorClass="text-blue-300" />
+        <Quadrant title="Spring" season="spring" icon={Leaf} colorClass="text-mw-sage" />
+        <Quadrant title="Summer" season="summer" icon={Sun} colorClass="text-mw-gold" />
+        <Quadrant title="Autumn" season="autumn" icon={Wind} colorClass="text-mw-rose" />
+        <Quadrant title="Winter" season="winter" icon={Snowflake} colorClass="text-blue-300" />
       </div>
     </div>
   );
