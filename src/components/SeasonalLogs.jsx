@@ -2,6 +2,7 @@ import React from 'react';
 import { useTasks } from '../context/TaskContext';
 import { Leaf, Sun, Wind, Snowflake } from 'lucide-react';
 
+// eslint-disable-next-line no-unused-vars
 const Quadrant = ({ title, season, icon: Icon, colorClass }) => {
   const { tasks } = useTasks();
   const seasonTasks = tasks.filter(t => t.season === season);

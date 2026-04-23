@@ -40,12 +40,12 @@ const TaskCard = ({ task }) => {
       )}
 
       <div className="mb-3">
-        <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-bold capitalize ${
+        <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-bold ${
           task.priority === 'urgent' ? 'bg-[#fecaca] text-[#7f1d1d]' :
           task.priority === 'normal' ? 'bg-[#dbeafe] text-[#1e3a5f]' :
           'bg-[#dcfce7] text-[#14532d]'
         }`}>
-          {task.priority}
+          {task.priority.charAt(0).toUpperCase() + task.priority.slice(1)}
         </span>
       </div>
 
