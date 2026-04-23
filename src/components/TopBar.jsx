@@ -8,7 +8,7 @@ const TopBar = () => {
     <header className="bg-[#4a2810]/90 font-bubblegum tracking-wide border-b-4 border-[#331c0a] shadow-xl flex justify-between items-center w-full px-6 py-3 z-50 sticky top-0">
 
       <div className="flex items-center gap-2">
-        <span className="text-2xl font-bold text-[#fef3c7] italic text-h2 drop-shadow-md mr-4">
+        <span className="text-2xl font-bold text-[#fef3c7] italic drop-shadow-md mr-4">
           Maplewood Tasks
         </span>
         <button
